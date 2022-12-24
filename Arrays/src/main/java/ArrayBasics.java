@@ -1,4 +1,7 @@
+import org.eclipse.jetty.util.ArrayUtil;
 import org.eclipse.jetty.util.Index;
+
+import com.fasterxml.jackson.annotation.ObjectIdGenerators.IntSequenceGenerator;
 
 /**
  * An array is a group of some predefined number of elements.
@@ -28,10 +31,21 @@ public class ArrayBasics {
      * @return the element at index n of arr.
      */
     public int getNthElementOfArray(int[] arr, int n){
-        return arr.indexOf(n);
         
+        if(arr == null) return -1;
+
+        int len = arr.length;
+        int i = 0;
+
+        if(i < len){
+            if(arr(i) == n) {return i;}
+            else {
+                return i = i+1;
+            }
+              
+        }
+        return -1;
         
-       
     }
 
     /**
@@ -51,11 +65,11 @@ public class ArrayBasics {
      * @return a new int array that can contain n elements.
      */
     public int[] returnNewArraySizeN(int n){
-        int[] myNewArray = new int[n];
+       int[] myNewArray = new int[n];
 
-        for(int i=0;i<=n-1;i++){
-            myNewArray[i]=i;
+        for(int index = 0; index < n -1  ; index++){
+            myNewArray[index]=index;
         }
             return myNewArray;
-    }
+    
 }
