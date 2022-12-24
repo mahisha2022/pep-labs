@@ -1,3 +1,4 @@
+import org.eclipse.jetty.util.Index;
 
 /**
  * An array is a group of some predefined number of elements.
@@ -15,7 +16,7 @@ public class ArrayBasics {
      * @return the length of arr.
      */
     public int getLengthOfArray(int[] arr){
-        return 0;
+        return arr.length;
     }
 
 
@@ -27,7 +28,10 @@ public class ArrayBasics {
      * @return the element at index n of arr.
      */
     public int getNthElementOfArray(int[] arr, int n){
-        return 0;
+        return arr.indexOf(n);
+        
+        
+       
     }
 
     /**
@@ -47,6 +51,11 @@ public class ArrayBasics {
      * @return a new int array that can contain n elements.
      */
     public int[] returnNewArraySizeN(int n){
-        return null;
+        int[] myNewArray = new int[n];
+
+        for(int i=0;i<=n-1;i++){
+            myNewArray[i]=i;
+        }
+            return myNewArray;
     }
 }
