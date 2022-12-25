@@ -41,8 +41,14 @@ public class ForLoop {
      */
     public String returnNumbers(int start, int end){
         String buildingString = "";
+        int sum = 0;
 
 //        code here
+        for(int i = start; i < end; i++){
+            buildingString = buildingString + i + " ";
+            sum = sum + i; 
+            
+            }
 
         return buildingString;
     }
