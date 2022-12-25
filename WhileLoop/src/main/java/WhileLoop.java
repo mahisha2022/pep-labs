@@ -34,13 +34,18 @@ public class WhileLoop {
      **/
     public int whileExample(int end){
         int sum = 0;
-        int i = 0;
+        int i = 1;
 
-        while(i < 5) {
-            sum = sum + i;
+        while(i < end) {
+            for(i = 1; i < end; i++){
+                sum = sum + i;
+                
+            }
+            
         }
-//      
-
+//     
         return sum;
-    }
+    
+    
+}
 }
