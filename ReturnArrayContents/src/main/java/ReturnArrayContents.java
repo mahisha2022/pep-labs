@@ -1,3 +1,7 @@
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
+
 public class ReturnArrayContents {
     /**
      * Return a string with an array's contents, formatted with spaces.
@@ -28,6 +32,12 @@ public class ReturnArrayContents {
      * @return a string representation of all values of nums, with the values separated by spaces.
      */
     public String arrayToString(int[] nums){
-        return "";
-    }
+
+        for(int e: nums){
+           
+            return e + " ";
+        }
+       return Arrays.toString(nums);
+    
+}
 }
