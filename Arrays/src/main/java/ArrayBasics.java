@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import org.eclipse.jetty.util.ArrayUtil;
 import org.eclipse.jetty.util.Index;
 
@@ -31,22 +33,13 @@ public class ArrayBasics {
      * @return the element at index n of arr.
      */
     public int getNthElementOfArray(int[] arr, int n){
-        
-        if(arr == null) return -1;
 
-        int len = arr.length;
-        int i = 0;
-
-        if(i < len){
-            if(arr(i) == n) {return i;}
-            else {
-                return i = i+1;
-            }
-              
+        return arr[n];
+       
         }
-        return -1;
+       
         
-    }
+
 
     /**
      *
@@ -57,6 +50,9 @@ public class ArrayBasics {
      * @return nothing. Because of pass-by-reference, any change to the array will be reflected across our java program.
      */
     public void setNthElementOfArray(int[] arr, int n, int val){
+        for(n = 0; n < arr.length; n++){
+            arr[n] = val;
+        }
 
     }
 
@@ -67,9 +63,10 @@ public class ArrayBasics {
     public int[] returnNewArraySizeN(int n){
        int[] myNewArray = new int[n];
 
-        for(int index = 0; index < n -1  ; index++){
-            myNewArray[index]=index;
+        for(int i = 0; i < n -1  ; i++){
+            myNewArray[i]=i;
         }
             return myNewArray;
     
+}
 }
