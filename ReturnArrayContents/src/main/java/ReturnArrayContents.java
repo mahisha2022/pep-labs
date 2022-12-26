@@ -32,12 +32,15 @@ public class ReturnArrayContents {
      * @return a string representation of all values of nums, with the values separated by spaces.
      */
     public String arrayToString(int[] nums){
+       
+        String[] str = new String[nums.length];
 
-        for(int e: nums){
-           
-            return e + " ";
+        for(int i : nums){
+            str[i] = String.valueOf(nums[i]);
+            
+            return Arrays.toString(str);
         }
-       return Arrays.toString(nums);
+       return Arrays.toString(str);
     
 }
 }
