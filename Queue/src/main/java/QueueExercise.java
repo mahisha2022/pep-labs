@@ -2,6 +2,7 @@
  * TODO: switch to deque
  */
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -31,7 +32,7 @@ public class QueueExercise {
      * Stack behavior.
      */
     public Queue<String> createQueue(){
-        Queue<String> que1 = new LinkedList<String>();
+        Queue<String> que1 = new ArrayDeque<String>();
         return que1;
     }
 
@@ -62,8 +63,8 @@ public class QueueExercise {
      * @return the next String due to be removed (polled) from the Queue<String> (the oldest item in the queue.)
      */
     public String removeFromStartOfQueue(Queue<String> queue){
-        queue.poll();
-        return queue.poll();
+       
+        return queue.remove();
     }
 
     /**
