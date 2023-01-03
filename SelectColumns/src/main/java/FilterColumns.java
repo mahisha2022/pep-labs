@@ -39,6 +39,7 @@ public class FilterColumns {
 
     public List<User> problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
+                sql = "SELECT firstname FROM site_user";
 
         List<User> users = new ArrayList<>();
         try {
