@@ -35,7 +35,7 @@ public class GetAllSongs {
     public List<Song> problem1(){
 
         String sql = FileUtil.parseSQLFile("problem1.sql");
-
+                sql = "SELECT * FROM song";
 
         List<Song> songs = new ArrayList<>();
         try {
