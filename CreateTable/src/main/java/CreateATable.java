@@ -62,16 +62,28 @@ public class CreateATable {
      *     |'Hotel California' |'Eagles'               |
      *     |'Kashmir'          |'Led Zeppelin'         |
      */
+  
+     
     public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
+                     sql =  " CREATE TABLE song" +
+                              "(title varchar(100), " +
+                              "artist varchar(100))";
 
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
-            s.executeUpdate(sql);
+
+             
+
+            s.executeUpdate(sql);    
+          
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
+
+        
     }
+    
 
 }
