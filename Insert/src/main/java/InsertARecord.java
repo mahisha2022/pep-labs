@@ -37,6 +37,8 @@ public class InsertARecord {
      * */
     public boolean problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
+                sql = " INSERT INTO song(title, artist)" + 
+                        "VALUES('The Dream', 'The Weekend')";
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
