@@ -48,6 +48,7 @@ public class OrderResultSetActivity {
          * ascending order by last name, and first name as a tie-breaker.
          */
         String sql = FileUtil.parseSQLFile("problem1.sql");
+                sql = " SELECT * FROM character ORDER BY last_name ASC, first_name ";
 
 
 
