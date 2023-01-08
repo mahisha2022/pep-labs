@@ -8,7 +8,14 @@ public class CustomExceptionThrower {
      *
      * I recommend looking at the test case for a good example of try/catch block usage, as well.
      */
-    public void throwCustomException(){
+    public void throwCustomException() throws CustomException{
+        int a = 0;
+        if(a < 21){
+            throw new CustomException("You are not qualified!"); 
+        }
+        else{
+            System.out.print("You are good to go!");
+        }
 
     }
 
