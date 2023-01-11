@@ -29,6 +29,8 @@ public class JavalinSingleton {
          */
         app.post("/problem2", ctx -> {
                //implement logic here
+
+               
         });
 
 
