@@ -51,6 +51,7 @@ public class AggregateFunctionsActivity {
          * Note: the output should not contain any other info but the sum.
          */
         String sql = FileUtil.parseSQLFile("problem1.sql");
+                sql = "SELECT SUM(salary) FROM employee";
 
         double average = 0.0;
         try {
@@ -74,6 +75,7 @@ public class AggregateFunctionsActivity {
          * Note: the output should not contain any other info but the count.
          */
         String sql = FileUtil.parseSQLFile("problem2.sql");
+                sql = "SELECT COUNT(id) FROM employee WHERE last_name = 'Smith'";
 
 
         int count = 0;
@@ -99,6 +101,7 @@ public class AggregateFunctionsActivity {
          * Note: the output should not contain any other info but the salary.
          */
         String sql = FileUtil.parseSQLFile("problem3.sql");
+                sql = "SELECT MIN(salary) FROM employee ";
 
 
         double minimum = 0.0;
@@ -123,6 +126,7 @@ public class AggregateFunctionsActivity {
          * Note: the output should not contain any other info but the salary.
          */
         String sql = FileUtil.parseSQLFile("problem4.sql");
+                sql = "SELECT MAX(salary) FROM employee";
 
 
         double maximum = 0.0;
