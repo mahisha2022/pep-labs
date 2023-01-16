@@ -96,6 +96,8 @@ public class OuterJoinActivity {
 
         String sql = FileUtil.parseSQLFile("problem1.sql");
 
+            sql = " SELECT * FROM class LEFT OUTER JOIN student ON class.class_title = student.class_title";
+
 
 
 
@@ -124,6 +126,7 @@ public class OuterJoinActivity {
          */
 
         String sql = FileUtil.parseSQLFile("problem2.sql");
+                sql = "SELECT * FROM class RIGHT OUTER JOIN textbook ON class.class_title = textbook.class_title";
 
 
 
