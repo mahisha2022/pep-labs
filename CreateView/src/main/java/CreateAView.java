@@ -71,6 +71,7 @@ public class CreateAView {
          * NOTE: This table should NOT have the id and age.
          */
         String sql = FileUtil.parseSQLFile("problem1.sql");
+                sql = "CREATE VIEW firstname_lastname as SELECT firstname, lastname FROM site_user ";
 
         try {
             Connection connection = ConnectionUtil.getConnection();
