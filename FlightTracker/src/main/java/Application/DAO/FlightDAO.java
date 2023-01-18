@@ -33,9 +33,8 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT flight_id, departure_city, arrival_city FROM flights ";
+            String sql = "SELECT flight_id, departure_city, arrival_city FROM flight ";
            
-
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
@@ -64,17 +63,16 @@ public class FlightDAO {
      * @param id a flight ID.
      */
     public Flight getFlightById(int id){
+       
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "select * from flights WHERE departure_city = ? OR arrival_city = ? OR flight_id = ? ";
+            String sql = "select * from flight WHERE flight_id = ? ";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, flight.departure_city);
-            preparedStatement.setString(1, flight.arrival_city);
-            preparedStatement.setInt(3, flight.flight_id);
 
             //write preparedStatement's setString and setInt methods here.
+            preparedStatement.setInt(1, id);
 
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
@@ -114,10 +112,11 @@ public class FlightDAO {
             //values (two columns total!)
             String sql = "INSERT INTO FLIGHT(departure_city, arrival_city) VALUES (?, ?)" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, flight.departure_city);
-            preparedStatement.setString(2, flight.arrival_city);
+           
 
             //write preparedStatement's setString and setInt methods here.
+            preparedStatement.setString(1, flight.departure_city);
+            preparedStatement.setString(2, flight.arrival_city);
 
 
             preparedStatement.executeUpdate();
@@ -153,11 +152,16 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "UPDATE FLIGHT (departure_city, arrival_city) WHERE flight_id = ? ";
+            String sql = "UPDATE flight SET departure_city = ? , SET arrival_city = ? WHERE flight_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, flight.flight_id);
+            // preparedStatement.setInt(1, flight.flight_id);
 
             //write PreparedStatement setString and setInt methods here.
+            preparedStatement.setString(1, flight.departure_city);
+            preparedStatement.setString(2, flight.arrival_city);
+            preparedStatement.setInt(1, id);
+            // preparedStatement.setInt(3, id);
+
 
 
             preparedStatement.executeUpdate();
@@ -188,13 +192,13 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT * FROM flights WHERE departure_city = ? AND arrival_city = ?";
+            String sql = "SELECT * FROM flight WHERE departure_city = ? AND arrival_city = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, flights.departure_city);
-            preparedStatement.setString(1, flights.arrival_city);
+            
 
             //write PreparedStatement setString and setInt methods here.
-
+            preparedStatement.setString(1, departure_city);
+            preparedStatement.setString(2, arrival_city);
 
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
