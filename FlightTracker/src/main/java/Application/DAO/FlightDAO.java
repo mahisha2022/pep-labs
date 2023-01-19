@@ -115,6 +115,7 @@ public class FlightDAO {
            
 
             //write preparedStatement's setString and setInt methods here.
+            
             preparedStatement.setString(1, flight.departure_city);
             preparedStatement.setString(2, flight.arrival_city);
 
@@ -152,15 +153,16 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "UPDATE flight SET departure_city = ? , SET arrival_city = ? WHERE flight_id = ?";
+            String sql = "UPDATE flight SET flight_id = ?, SET departure_city = ? , SET arrival_city = ?  WHERE flight_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             // preparedStatement.setInt(1, flight.flight_id);
 
             //write PreparedStatement setString and setInt methods here.
+            preparedStatement.setInt(1, flight.flight_id);
             preparedStatement.setString(1, flight.departure_city);
-            preparedStatement.setString(2, flight.arrival_city);
-            preparedStatement.setInt(1, id);
-            // preparedStatement.setInt(3, id);
+            preparedStatement.setString(3, flight.arrival_city);
+            preparedStatement.setInt(4, id);
+         
 
 
 
