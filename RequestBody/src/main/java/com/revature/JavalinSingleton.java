@@ -25,7 +25,7 @@ public class JavalinSingleton {
                 Song song = om.readValue(jsonString, Song.class);
 
                 ctx.contentType("application/json"); 
-                song.getArtistName();
+                song.artistName(jsonString);
 
                 String jsonStringToBeReturned = om.writeValueAsString(song);
                 ctx.result(jsonStringToBeReturned);
@@ -63,6 +63,7 @@ public class JavalinSingleton {
 
                String jsonStringToBeReturned = om.writeValueAsString(song);
                ctx.result(jsonStringToBeReturned);
+               
 
                
         });
