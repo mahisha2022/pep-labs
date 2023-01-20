@@ -33,7 +33,7 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT flight_id, departure_city, arrival_city FROM flight ";
+            String sql = "SELECT * FROM flight ";
            
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
@@ -155,7 +155,7 @@ public class FlightDAO {
             //Write SQL logic here
             String sql = "UPDATE flight SET departure_city = ? , arrival_city = ?  WHERE flight_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            // preparedStatement.setInt(1, flight.flight_id);
+            
 
             //write PreparedStatement setString and setInt methods here.
             // preparedStatement.setInt(1, id);
