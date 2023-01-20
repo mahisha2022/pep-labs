@@ -70,7 +70,7 @@ public class FlightService {
             flightDAO.updateFlight(flight_id, flight);
         }
 
-        return flight;
+        return flightDAO.getFlightById(flight_id);
     
  
     }
