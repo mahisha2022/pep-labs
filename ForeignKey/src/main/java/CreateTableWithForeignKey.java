@@ -89,7 +89,7 @@ public class CreateTableWithForeignKey {
          * the user table's id.
          */
         String sql = FileUtil.parseSQLFile("problem1.sql");
-                sql = "CREATE table post (id SERIAL PRIMARY KEY, post VARCHAR(255), user_fk INT REFERENCES user(id))"; 
+                sql = "CREATE table post (id SERIAL PRIMARY KEY, post VARCHAR(255), user_fk INT REFERENCES site_user(id))"; 
                    
                 
         try {
