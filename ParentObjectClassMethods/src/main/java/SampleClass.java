@@ -55,10 +55,27 @@ public class SampleClass {
     public int a;
     public boolean b;
 
+    
+
     //    implement a custom .equals(SampleClass other){} method here.
-
-
+    @Override
+    public boolean equals(Object object){
+        SampleClass sampleClass = (SampleClass)object;
+        if (this.b != sampleClass.b){
+            return false;
+        }
+        if(this.a != sampleClass.a){
+            return false;
+        }
+        return true;
+    }
     //    implement a custom .toString(){} method here.
 
-    
+    @Override
+    public String toString() {
+        return "SampleClass{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
 }
