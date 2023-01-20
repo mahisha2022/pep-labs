@@ -28,19 +28,7 @@ public class JavalinSingleton {
                 song.artistName(jsonString);
 
                 String jsonStringToBeReturned = om.writeValueAsString(song);
-                ctx.result(jsonStringToBeReturned);
-
-
-                
-                
-
-
-              
-
-            
-                
-                
-                
+                ctx.result(jsonStringToBeReturned);    
         });
 
         /**
