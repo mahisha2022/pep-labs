@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CharComparison {
     /**
      * Given an array of char, determine if the array A belongs to the left or to the right of char array B lexigraphically.
@@ -11,6 +13,16 @@ public class CharComparison {
      * @return -1 if A is less than B, 1 if A is greater than B, and 0 if the two arrays are identical.
      */
     public int compare(char[] a, char[] b){
+       
+        for(int i = 0; i < a.length && i < b.length; i++){
+           
+            if(a[i] < b[i]){
+                return -1;
+            }
+            if(a[i] > b[i]){
+                return 1; 
+            }
+        }
         return 0;
     }
 }
