@@ -20,15 +20,11 @@ public class JavalinSingleton {
          */
         app.post("/problem1", ctx -> {
                 //implement logic here
-                String jsonString = ctx.body();
+
                 ObjectMapper om = new ObjectMapper();
-                Song song = om.readValue(jsonString, Song.class);
-
-                ctx.contentType("application/json"); 
-                song.artistName(jsonString);
-
-                String jsonStringToBeReturned = om.writeValueAsString(song);
-                ctx.result(jsonStringToBeReturned);    
+                Song song = om.readValue(ctx.body(), Song.class);
+                song.getArtistName();
+                ctx.json(song.getArtistName());    
         });
 
         /**
@@ -40,20 +36,16 @@ public class JavalinSingleton {
          */
         app.post("/problem2", ctx -> {
                //implement logic here
-
                String jsonString = ctx.body();
                ObjectMapper om = new ObjectMapper();
                Song song = om.readValue(jsonString, Song.class);
 
                ctx.contentType("application/json"); 
-               song.artistName("Beatles");
-               song.getArtistName();
-
+               song.setArtistName( "Beatles");
+               
                String jsonStringToBeReturned = om.writeValueAsString(song);
                ctx.result(jsonStringToBeReturned);
-               
-
-               
+       
         });
 
 
