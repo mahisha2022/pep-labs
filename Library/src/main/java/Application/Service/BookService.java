@@ -7,6 +7,11 @@ import static org.mockito.ArgumentMatchers.nullable;
 
 import java.util.List;
 
+import javax.lang.model.element.Element;
+
+import org.eclipse.jetty.util.Retainable;
+import org.mockito.internal.matchers.Null;
+
 /**
  * The purpose of a Service class is to contain "business logic" that sits between the web layer (controller) and
  * persistence layer (DAO). That means that the Service class performs tasks that aren't done through the web or
@@ -54,11 +59,14 @@ public class BookService {
      */
     public Book addBook(Book book) {
         
-        if(bookDAO.getAllBooks() == book){
-            return null;
-        }else {
-            return bookDAO.insertBook(book);
-        }
+      if (bookDAO.getBookByIsbn(book.getIsbn()) == null) {
+        bookDAO.insertBook(book);
+            return book;
+        
+      }
+      return null;
+    
+       
         
     }
     /**
