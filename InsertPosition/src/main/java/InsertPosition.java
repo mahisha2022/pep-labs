@@ -16,18 +16,17 @@ public class InsertPosition {
      */
     public int searchInsert(int[] nums, int target) {
         
-        int[] arr = new int[nums.length + 1];
-        for(int i = 0; i < nums.length; i++){
-            arr[i] = nums[i];
+        int index = -1;
+
+        for (int i = 0; i < nums.length; i++){
+            if(nums[i] == target){
+                return i;
+            }
+            else if(nums[i] < target){
+                index = i;
+            }
         }
-         arr[arr.length - 1] = target;
-         //sort the new array
-         Arrays.sort(arr);
-         
-         //return the new array 
-         for(int i = 0; i < arr.length; i++){
-            return arr[i];
-         }
-         return arr[target];
+        return index + 1;
     }
+    
 }
