@@ -13,11 +13,13 @@ public class LargestSum {
         int max = 0;
         int sum = 0;
         for(int i = 0; i < nums.size(); i++){
-            sum += nums.get(i);
-            if(sum > max ){
-                max = sum;
-            }else {
-                sum = 0;
+            for (int j = i +1; j <nums.size(); j++){
+                sum = nums.get(i) + nums.get(j);
+                if(sum > max ){
+                    max = sum;
+                }else {
+                    sum = 0;
+                }
             }
         }
         return max;
