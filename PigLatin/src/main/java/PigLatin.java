@@ -18,17 +18,14 @@ public class PigLatin {
      */
     public String returnPigLatin(String in){
     
-        int stringLength = in.length();
-        int index = -1;
-        for(int i =0; i<stringLength; i++){
-            if(in.charAt(i)){
-                index = i;
-                break;
-            }
+        String pigLatin = "";
+        if(in.charAt(0) == 'a' || in.charAt(0) == 'e' || in.charAt(0) == 'i'
+                || in.charAt(0) == 'u' || in.charAt(0) == 'o'){
+            pigLatin = in + "way";
+        } else {
+            pigLatin = in.substring(1) + in.charAt(0) + "ay";
         }
-        if(index == -1)
-            return "-1";
-        return in.substring(index) + in.substring(0, index) + "ay";
-    }
+        return pigLatin;
+    
     }
 }
